@@ -1,8 +1,11 @@
+#!/usr/bin/env node
+
 const cp = require('child_process')
 const chokidar = require('chokidar')
 const watcher = chokidar.watch('*.py', { ignoreInitial: true })
 
 const SKIP_LIMIT = process.env.WATCH_PYLINT_SKIP_LIMIT || 7
+const PYTHON_BIN = process.env.WATCH_PYLINT_PYTHON_BIN || 'python3'
 const PYLINT_BIN = process.env.WATCH_PYLINT_PYLINT_BIN || 'packages/bin/pylint'
 const PACKAGES_DIR = process.env.WATCH_PYLINT_PACKAGES_DIR || 'packages'
 let skipCount = 0
@@ -36,10 +39,10 @@ const resultHandler = (err,stdout,stderr) => {
 watcher.on('all', (event, path) => {
   //console.log( event, path )
   
-  cp.exec(`${PYLINT_BIN} --ignore ${PACKAGES_DIR} *.py`, resultHandler )
+  cp.exec(`${PYTHON_BIN} ${PYLINT_BIN} --ignore ${PACKAGES_DIR} *.py`, resultHandler )
   .on('close', closeEventHandler )
 });
 
-cp.exec(`${PYLINT_BIN} --ignore ${PACKAGES_DIR} *.py`, resultHandler )
+cp.exec(`${PYTHON_BIN} ${PYLINT_BIN} --ignore ${PACKAGES_DIR} *.py`, resultHandler )
 .on('close', closeEventHandler )
 

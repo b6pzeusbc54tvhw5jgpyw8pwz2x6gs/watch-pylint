@@ -1,7 +1,7 @@
 {
   "name": "watch-pylint",
   "preferGlobal": "true",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "watch-pylint",
   "main": "bin/index.js",
   "license": "MIT",
@@ -9,7 +9,7 @@
     "bin": "bin"
   },
   "bin": {
-    "watch-pylint": "bin/index"
+    "watch-pylint": "bin/index.js"
   },
   "repository": {
     "type": "git",
