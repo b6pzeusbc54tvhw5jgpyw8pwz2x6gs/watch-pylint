@@ -1,4 +1,4 @@
-# watch-node
+# watch-pylint
 [![npm version](https://img.shields.io/npm/v/watch-pylint.svg?style=flat-square)](https://www.npmjs.com/package/watch-pylint)
 
 ## Prerequisites
