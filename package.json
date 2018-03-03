@@ -1,0 +1,22 @@
+{
+  "name": "watch-pylint",
+  "preferGlobal": "true",
+  "version": "0.1.0",
+  "description": "watch-pylint",
+  "main": "bin/index.js",
+  "license": "MIT",
+  "directories": {
+    "bin": "bin"
+  },
+  "bin": {
+    "watch-pylint": "bin/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b6pzeusbc54tvhw5jgpyw8pwz2x6gs/watch-pylint"
+  },
+  "author": "Alfred UC",
+  "dependencies": {
+    "chokidar": "^2.0.2"
+  }
+}
